@@ -582,13 +582,13 @@ HRESULT CInstrumentationMethod::ProcessInstructionNodes(IXMLDOMNode* pNode, vect
                 }
             }
 
-            if ( (!isBaseline) && (instrType != Remove) && (instrType != RemoveAll) && (!bOpcodeSet || !bOffsetSet))
+            if ((!isBaseline) && (instrType != Remove) && (instrType != RemoveAll) && (instrType != SingleRetDefaultInstrumentation) && (!bOpcodeSet || !bOffsetSet))
             {
                 ATLASSERT(!L"Invalid configuration. Instruction must have an offset");
                 return E_FAIL;
             }
 
-            if (((instrType == Replace) || (instrType == Remove) || (instrType == RemoveAll)) && (dwRepeatCount != 1))
+            if (((instrType == Replace) || (instrType == Remove) || (instrType == RemoveAll) || (instrType == SingleRetDefaultInstrumentation)) && (dwRepeatCount != 1))
             {
                 ATLASSERT(!L"Invalid configuration. Incorrect repeat count");
                 return E_FAIL;
@@ -1025,6 +1025,13 @@ HRESULT CInstrumentationMethod::InstrumentMethod(_In_ IMethodInfo* pMethodInfo, 
                         IfFailRet(pInstructionGraph->InsertAfter(NULL, pNewInstruction));
                     }
                 }
+            }
+            else if ((instrType == SingleRetDefaultInstrumentation))
+            {
+                // Add single return Instrumentation here
+                CComPtr<ISingleRetDefaultInstrumentation> singleRetDefaultInstrumentation;
+                IfFailRet(pMethodInfo->GetSingleRetDefaultInstrumentation(&singleRetDefaultInstrumentation));
+                IfFailRet(singleRetDefaultInstrumentation->ApplySingleRetDefaultInstrumentation());
             }
             else
             {

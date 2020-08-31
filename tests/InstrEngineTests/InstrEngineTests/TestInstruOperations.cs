@@ -71,5 +71,12 @@ namespace InstrEngineTests
         {
             ProfilerHelpers.LaunchAppAndCompareResult("InstruOperationsTests_Release_x64", "Instru_InsertAfterTest.xml", "Instru_InsertAfterTest");
         }
+
+        [TestMethod]
+        [Timeout(TestConstants.TestTimeout)]
+        public void Instru_SingleRetDefaultInstrumentationTest()
+        {
+            ProfilerHelpers.LaunchAppAndCompareResult("InstruOperationsTests_Release_x64", "Instru_SingleRetDefaultInstrumentation.xml", "Instru_SingleRetDefaultInstrumentation");
+        }
     }
 }

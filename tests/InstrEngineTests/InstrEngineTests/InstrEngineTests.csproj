@@ -53,6 +53,7 @@
     <EmbeddedResource Include="EmbeddedResources\HttpMethodTests.cs" />
     <EmbeddedResource Include="EmbeddedResources\DynamicCodeTests.cs" />
     <EmbeddedResource Include="EmbeddedResources\InstrumentationMethodLoggingTests.cs" />
+    <Compile Include="EmbeddedResources\SingleRetDefaultInstrumentationTests.cs" />
     <Compile Include="PathUtils.cs" />
     <Compile Include="RuntimeExceptionCallbacks.cs" />
     <Compile Include="TestConstants.cs" />

@@ -32,7 +32,8 @@ namespace InstrEngineTests
             "LocalTests",
             "RuntimeExceptionCallbacks",
             "HttpMethodTests",
-            "DynamicCodeTests" };
+            "DynamicCodeTests",
+            "SingleRetDefaultInstrumentationTests" };
 
         internal static void ComplileCSharpTestCode(string path)
         {
