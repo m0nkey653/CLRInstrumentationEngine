@@ -559,6 +559,10 @@ HRESULT CInstrumentationMethod::ProcessInstructionNodes(IXMLDOMNode* pNode, vect
                     {
                         instrType = RemoveAll;
                     }
+                    else if (wcscmp(bstrInstrType, L"SingleRetDefaultInstrumentation") == 0)
+                    {
+                        instrType = SingleRetDefaultInstrumentation;
+                    }
                 }
                 else if (wcscmp(bstrCurrInstructionNodeName, L"RepeatCount") == 0)
                 {

@@ -30,7 +30,8 @@ enum InstrumentationType
     InsertAfter,
     Replace,
     Remove,
-    RemoveAll
+    RemoveAll,
+    SingleRetDefaultInstrumentation
 };
 
 class CInstrumentInstruction
