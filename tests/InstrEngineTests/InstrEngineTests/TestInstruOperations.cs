@@ -76,7 +76,7 @@ namespace InstrEngineTests
         [Timeout(TestConstants.TestTimeout)]
         public void Instru_SingleRetDefaultInstrumentationTest()
         {
-            ProfilerHelpers.LaunchAppAndCompareResult("InstruOperationsTests_Release_x64", "Instru_SingleRetDefaultInstrumentation.xml", "Instru_SingleRetDefaultInstrumentation");
+            ProfilerHelpers.LaunchAppAndCompareResult("InstruOperationsTests_Release_x64", "Instru_SingleRetDefaultInstrumentationTest.xml", "Instru_SingleRetDefaultInstrumentationTest");
         }
     }
 }

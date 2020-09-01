@@ -100,5 +100,20 @@ namespace InstruOperationsTests
                 error++;
             }
         }
+
+        static void Instru_SingleRetDefaultInstrumentationTest()
+        {
+            int a = 5;
+
+            if (a == 6)
+            {
+                Console.Write(a);
+                return;
+            }
+
+            a = 7;
+            Console.Write(a);
+            return;
+        }
     }
 }
